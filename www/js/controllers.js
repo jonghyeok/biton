@@ -19,6 +19,24 @@ angular.module('starter.controllers',  ['ionic','ngCordova','ngCordovaBeacon'])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+
+
+  console.log("스타트~!")
+
+  var date = new Date();
+
+   cordova.plugins.notification.local.schedule({
+       id: 1,
+       title: "Production Jour fixe",
+       text: "Duration 1s!!",
+       at: date,
+       every: "second",
+       icon: "http://snail5916.cafe24.com/file/icon.png",
+       data: { meetingId:"123#fg8" }
+   });
+
+
+
 })
 
 .controller('AccountCtrl',function($scope, $rootScope,$cordovaBeacon ) {
